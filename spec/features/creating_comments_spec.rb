@@ -1,12 +1,8 @@
 require 'spec_helper'
 feature "Creating comments" do
-  let!(:user) { Factory(:user) }
-  let!(:car) { Factory(:car) }
-
-
- before do
-   user = factorygirl.create(:user) 
-   car = factorygirl.create(:car)
+  before do
+    user = factorygirl.create(:user) 
+    car = factorygirl.create(:car)
     visit '/'
     click_link project.name
     click_link "new ticket" 
