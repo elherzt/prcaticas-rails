@@ -1,8 +1,21 @@
 require 'spec_helper'
 feature "Creating comments" do
-  let!(:user) { Factory(:confirmed_user) }
-  let!(:project) { Factory(:project) }
-  let!(:ticket) { Factory(:ticket, :project => project, :user => user) }
+  before do
+    user = factorygirl.create(:user) 
+    car = factorygirl.create(:car)
+    visit '/'
+    click_link project.name
+    click_link "new ticket" 
+    fill_in "title", with: "add documentation for blink tag"
+    fill_in "description", with: "the blink tag has a speed attribute"
+    attach_file "file #1", rails.root.join("spec/fixtures/speed.png")
+    attach_file "file #2", rails.root.join("spec/fixtures/speed.png")
+    attach_file "file #3", rails.root.join("spec/fixtures/speed.png")
+    click_button "create ticket"
+
+  end
+
+  
   before do
     define_permission!(user, "view", project)
     sign_in_as!(user)
