@@ -3,5 +3,7 @@ class Car < ActiveRecord::Base
   has_many :assets
   #has_attached_file 
   accepts_nested_attributes_for :assets
-  
+  has_many :comments
+
+
 end
