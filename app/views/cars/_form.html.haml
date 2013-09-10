@@ -1,0 +1,13 @@
+= form_for [@user, @car], html: { multipart: true } do |f|
+  %h4 Model:
+  =f.text_field :model
+  %h4 Brand:
+  =f.text_field :brand
+
+
+  - number = 0
+  = f.fields_for :assets do |asset|
+    = asset.label :asset, "File ##{number += 1}"
+    = asset.file_field :asset
+  =f.submit
+

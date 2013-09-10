@@ -1,0 +1,13 @@
+= form_for @user do |f|
+  %h4 Name:
+  =f.text_field :name
+  -#%h4 Last Name:
+  -#=f.text_field :last_name
+  -#%h4 Username
+  -#=f.text_field :username
+  %h4 Password
+  =f.password_field :password
+  %h4 Confirm the password
+  =f.password_field :password_confirmation
+  %br
+  =f.submit

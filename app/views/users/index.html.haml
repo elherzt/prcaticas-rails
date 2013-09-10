@@ -1,0 +1,6 @@
+%h1 Users...
+-@user.each do |r|
+  =r.name
+  =r.last_name
+  =link_to "view", user_path(r.id)
+  %br/
