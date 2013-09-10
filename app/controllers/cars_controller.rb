@@ -3,6 +3,7 @@ before_action :set_user
   def new
    @car = @user.cars.build
    3.times { @car.assets.build}
+   #@comment = @car.comments.build
  end
 
  def create
@@ -16,6 +17,7 @@ before_action :set_user
  
  def show
    @car = @user.cars.find(params[:id])
+   @comment = @car.comments.build
  end
 
 def edit
