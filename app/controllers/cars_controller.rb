@@ -38,7 +38,7 @@ end
  end
 
  def car_params
-   params.require(:car).permit(:model, :brand, :user_id, assets_attributes: [:asset])
- end
+   params.require(:car).permit(:model, :brand, :user_id, :tag_names, assets_attributes: [:asset])
 
+ end
 end

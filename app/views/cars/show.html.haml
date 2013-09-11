@@ -10,6 +10,7 @@
   Brand:
   =@car.brand
 = simple_format(@car.model)
+=render @car.tags
 %h3 Car's Picture
 .asset
   - @car.assets.each do |asset|

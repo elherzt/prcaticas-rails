@@ -9,5 +9,8 @@
   = f.fields_for :assets do |asset|
     = asset.label :asset, "File ##{number += 1}"
     = asset.file_field :asset
+  %p
+    =f.label :tag_names 
+    =f.text_field :tag_names
   =f.submit
 
