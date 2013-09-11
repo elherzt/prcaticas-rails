@@ -1,2 +1,4 @@
 %span.tag
+  = link_to "x", remove_user_car_tag_path(@user, @car, tag), :method => :delete, :remote => true, :id => "delete-#{tag.name.parameterize}"
   = tag.name
+

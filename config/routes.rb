@@ -3,6 +3,11 @@ ExamRails::Application.routes.draw do
   resources :users do
     resources :cars do 
       resources :comments
+      resources :tags do
+        member do
+          delete :remove
+        end
+      end
     end
   end
 
@@ -13,3 +18,4 @@ ExamRails::Application.routes.draw do
 get "/signin", to: "sessions#new"
 post "/signin", to: "sessions#create"
 end
+
