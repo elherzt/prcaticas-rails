@@ -5,6 +5,15 @@
     = f.label :text
     %br/
     = f.text_area :text
+  %p
+    = f.label :state_id
+    = f.select :state_id , @states.map { |s| [s.name, s.id] } , :selected => @car.state_id
+
+  -#%select#comment_state_id{:name => "comment[state_id]"}
+    -#%option{:selected => "selected", :value => "1"} New
+    -#%option{:value => "2"} Open
+    -#%option{:value => "3"} Closed
+
     =f.hidden_field :user_id, :value => @user.id
   = f.submit
 

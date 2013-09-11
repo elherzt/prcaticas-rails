@@ -1,3 +1,4 @@
 = div_for(comment) do
   -#= comment.user.name
+  -#= render @car.state if @car.state
   = simple_format(comment.text)

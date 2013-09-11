@@ -18,6 +18,7 @@ before_action :set_user
  def show
    @car = @user.cars.find(params[:id])
    @comment = @car.comments.build
+   @states = State.all
  end
 
 def edit

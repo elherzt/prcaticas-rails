@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
   end
   private
   def comment_params
-    params.require(:comment).permit(:text)
+    params.require(:comment).permit(:text, :state_id)
   end
   def find_car
     @car = Car.find(params[:car_id])
