@@ -2,3 +2,7 @@
   -#= comment.user.name
   -#= render @car.state if @car.state
   = simple_format(comment.text)
+  -if comment.previous_state != comment.state
+    = comment.previous_state 
+    &rarr;   
+    = comment.state 

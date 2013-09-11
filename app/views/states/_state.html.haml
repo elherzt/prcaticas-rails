@@ -1,2 +1,9 @@
 %div{:class => "state state_#{state.name.parameterize}"}
   = state
+  -#= render comment.previous_state  
+  -#&rarr
+  -#= render comment.state
+  -#-if comment.previous_state != comment.state
+    -#= comment.previous_state 
+    -#&rarr;   
+    -#= comment.state 
