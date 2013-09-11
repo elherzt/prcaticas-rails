@@ -10,6 +10,8 @@
   Brand:
   =@car.brand
 = simple_format(@car.model)
+#tags
+  = render @ticket.tags
 %h3 Car's Picture
 .asset
   - @car.assets.each do |asset|
