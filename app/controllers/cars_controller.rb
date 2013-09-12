@@ -37,6 +37,7 @@ end
 
  def search
    #@cars = Car.search("tag:#{params['search']}")
+   #binding.pry
    @cars = @user.cars.search("tag:#{params['search']}")
    #binding.pry
    render "users/show"
