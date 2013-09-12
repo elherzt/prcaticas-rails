@@ -1,6 +1,5 @@
 class Car < ActiveRecord::Base
   searcher do
-    binding.pry
     label :tag, :from => :tags, :field => :name
     label :state, :from => :state, :field => :name
   end
