@@ -2,6 +2,9 @@ ExamRails::Application.routes.draw do
   root :to => "users#index"
   resources :users do
     resources :cars do 
+      collection do
+        get :search
+      end
       resources :comments
       resources :tags do
         member do

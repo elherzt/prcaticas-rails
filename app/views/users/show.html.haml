@@ -1,10 +1,14 @@
+= form_tag search_user_cars_path(@user), :method => :get do                              
+  = label_tag "search"
+  = text_field_tag "search", params[:search]
+  = submit_tag "Search"
 %h2
   User...
   =@user.name
   =@user.last_name
 %h3 
   your cars:
-  -@user.cars.each do |f|
+  -@cars.each do |f|
     =f.model
     =f.brand
     =link_to "edit", edit_user_car_path(@user.id, f.id)
