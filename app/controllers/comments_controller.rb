@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   #before_filter :authenticate_user!
+  before_action :require_signin!, except: [:show,:index]
   before_filter :find_car
   def create
     @comment = @car.comments.build(comment_params)

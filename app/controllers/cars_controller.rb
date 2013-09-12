@@ -1,5 +1,8 @@
 class CarsController < ApplicationController
-before_action :set_user
+
+  before_action :require_signin!, except: [:show,:index]
+  before_action :set_user
+
   def new
    @car = @user.cars.build
    3.times { @car.assets.build}
