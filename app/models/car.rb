@@ -1,10 +1,13 @@
 class Car < ActiveRecord::Base
+  searcher do
+    binding.pry
+    label :tag, :from => :tags, :field => :name
+    label :state, :from => :state, :field => :name
+  end
+
   attr_accessor :tag_names
   #attr_accessible :tag_names
-  searcher do
-    label :tag, :from => :tags, :field => :name
-  end
- 
+   
 
   belongs_to :state
   belongs_to :user
