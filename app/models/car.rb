@@ -1,7 +1,9 @@
 class Car < ActiveRecord::Base
   attr_accessor :tag_names
   #attr_accessible :tag_names
-  
+  searcher do
+    label :tag, :from => :tags, :field => :name
+  end
  
 
   belongs_to :state

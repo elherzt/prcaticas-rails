@@ -32,6 +32,11 @@ end
    end
  end
 
+ def search
+   @cars = @user.cars.search(params[:search])
+   render "users/show"
+ end
+
  private
  def set_user
    @user = User.find(params[:user_id])
