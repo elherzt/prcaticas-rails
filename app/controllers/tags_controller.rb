@@ -6,6 +6,6 @@ class TagsController < ApplicationController
       @car.tags -= [@tag]
       #binding.pry
       @car.save
-      render :nothing => true
+      #render :nothing => true
   end
 end
