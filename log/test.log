@@ -446,3 +446,75 @@ Processing by UsersController#index as HTML
   Rendered users/index.html.haml within layouts/application (35.6ms)
 Completed 200 OK in 118ms (Views: 84.7ms | ActiveRecord: 2.0ms)
   [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+Started POST "/api/v1/users.json" for 127.0.0.1 at 2013-09-13 15:58:57 -0500
+Processing by Api::V1::UsersController#create as JSON
+  Parameters: {"car"=>{"model"=>"Troca", "brand"=>"Ford", "tags"=>"Troca perrona"}}
+Completed 500 Internal Server Error in 108ms
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (40.5ms)[0m  INSERT INTO "users" ("created_at", "mail", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Fri, 13 Sep 2013 21:14:38 UTC +00:00], ["mail", "elherzt@gmail.com"], ["name", "Chuyito"], ["password_digest", "$2a$04$NJx/SWs25X88TiPw9e2xFOaELtIqOLeCvthunD6k5CzTRvjSF2OlC"], ["updated_at", Fri, 13 Sep 2013 21:14:38 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (41.3ms)[0m  INSERT INTO "users" ("created_at", "mail", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Fri, 13 Sep 2013 21:15:27 UTC +00:00], ["mail", "elherzt@gmail.com"], ["name", "Chuyito"], ["password_digest", "$2a$04$PsoaRS5NjjUgBJFVKoZjYeewJXpXrwqn1CBZm8A2DAnNbnwcxM2yi"], ["updated_at", Fri, 13 Sep 2013 21:15:27 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (40.4ms)[0m  INSERT INTO "users" ("created_at", "mail", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Fri, 13 Sep 2013 21:17:00 UTC +00:00], ["mail", "elherzt@gmail.com"], ["name", "Chuyito"], ["password_digest", "$2a$04$KQO4bF71muwa93lNZkYha.oyxtHDKUKTvQs7qzI5jLdKwyfT1Km5K"], ["updated_at", Fri, 13 Sep 2013 21:17:00 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (39.3ms)[0m  INSERT INTO "users" ("created_at", "mail", "name", "password_digest", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["created_at", Fri, 13 Sep 2013 21:17:40 UTC +00:00], ["mail", "elherzt@gmail.com"], ["name", "Chuyito"], ["password_digest", "$2a$04$hTewk2QmuVARlCju5ze0XuGBbEOk0ZtQTA1EQd6VLpynC5L0CNNQS"], ["updated_at", Fri, 13 Sep 2013 21:17:40 UTC +00:00]]
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/" for 127.0.0.1 at 2013-09-13 16:17:40 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.haml within layouts/application (7.1ms)
+Completed 200 OK in 110ms (Views: 88.1ms | ActiveRecord: 0.6ms)
+Started GET "/signin" for 127.0.0.1 at 2013-09-13 16:17:40 -0500
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.haml within layouts/application (16.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms)
+Started POST "/signin" for 127.0.0.1 at 2013-09-13 16:17:40 -0500
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "signin"=>{"name"=>"Chuyito", "password"=>"[FILTERED]"}, "commit"=>"Sign in"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."name" = 'Chuyito' ORDER BY "users"."id" ASC LIMIT 1[0m
+Redirected to http://www.example.com/
+Completed 302 Found in 10ms (ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2013-09-13 16:17:40 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.haml within layouts/application (1.7ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Completed 200 OK in 6ms (Views: 4.2ms | ActiveRecord: 1.0ms)
+Started GET "/" for 127.0.0.1 at 2013-09-13 16:17:40 -0500
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+  Rendered users/index.html.haml within layouts/application (1.9ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = 4 LIMIT 1[0m
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.3ms)[0m  ROLLBACK

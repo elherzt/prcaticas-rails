@@ -28,6 +28,8 @@ gem 'carrierwave'
 
 gem'pry'
 
+gem 'rack-test'
+
 gem 'pg'
 
 gem 'bcrypt-ruby','~> 3.0.0'
