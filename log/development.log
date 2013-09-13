@@ -31168,3 +31168,38 @@ Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-12 16:41:38
 
 
 Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-12 16:41:38 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddTokenToUsers (20130913162544)
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (167.4ms)[0m  [1mALTER TABLE "users" ADD COLUMN "authentication_token" character varying(255)[0m
+  [1m[35mSQL (32.0ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ($1)  [["version", "20130913162544"]]
+  [1m[36m (24.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (508.2ms)[0m  [1mDROP DATABASE IF EXISTS "fifth_evaluation_test"[0m
+  [1m[35m (3229.6ms)[0m  CREATE DATABASE "fifth_evaluation_test" ENCODING = 'utf8'
+  [1m[36m (98.8ms)[0m  [1mCREATE TABLE "assets" ("id" serial primary key, "asset" character varying(255), "car_id" integer, "created_at" timestamp, "updated_at" timestamp) [0m
+  [1m[35m (8.3ms)[0m  CREATE TABLE "car_watchers" ("user_id" integer, "car_id" integer) 
+  [1m[36m (141.7ms)[0m  [1mCREATE TABLE "cars" ("id" serial primary key, "model" character varying(255), "brand" character varying(255), "user_id" integer, "created_at" timestamp, "updated_at" timestamp, "state_id" integer) [0m
+  [1m[35m (77.6ms)[0m  CREATE INDEX "index_cars_on_state_id" ON "cars" USING btree ("state_id")
+  [1m[36m (8.9ms)[0m  [1mCREATE TABLE "cars_tags" ("tag_id" integer, "car_id" integer) [0m
+  [1m[35m (153.1ms)[0m  CREATE TABLE "comments" ("id" serial primary key, "text" text, "car_id" integer, "user_id" integer, "state_id" integer, "previous_state_id" integer) 
+  [1m[36m (130.8ms)[0m  [1mCREATE TABLE "states" ("id" serial primary key, "name" character varying(255), "color" character varying(255), "background" character varying(255)) [0m
+  [1m[35m (164.1ms)[0m  CREATE TABLE "tags" ("id" serial primary key, "name" character varying(255)) 
+  [1m[36m (31.1ms)[0m  [1mCREATE TABLE "tags_cars" ("tag_id" integer, "car_id" integer) [0m
+  [1m[35m (152.8ms)[0m  CREATE TABLE "users" ("id" serial primary key, "name" character varying(255), "last_name" character varying(255), "username" character varying(255), "cars_id" character varying(255), "created_at" timestamp, "updated_at" timestamp, "password_digest" character varying(255), "mail" character varying(255), "authentication_token" character varying(255)) 
+  [1m[36m (11.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (74.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.8ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (9.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130913162544')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130911162154')[0m
+  [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130906180132')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130906165843')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130906153558')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130911174409')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130912204608')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130910153259')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130909222314')
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130910230835')[0m
+  [1m[35m (10.8ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130911203422')
+  [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20130910050105')[0m
+  [1m[35m (10.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20130910181221')
