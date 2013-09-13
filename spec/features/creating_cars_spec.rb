@@ -1,12 +1,8 @@
 require 'spec_helper'
 feature 'Creating cars' do
   before do
-    visit '/'
-    click_link "Sign up"
-    fill_in "user[name]", with: "pepe"
-    fill_in "user[password]", with: "123"
-    fill_in "user[password_confirmation]", with: "123"
-    click_button "Create User"
+    login
+    click_link "view"
     click_link "Add car"
   end
 

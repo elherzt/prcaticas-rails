@@ -40,3 +40,12 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 end
+def login
+    user = FactoryGirl.create(:user)
+    visit '/'
+    click_link 'Sign in'
+    fill_in "signin[name]", with: user.name
+    fill_in "signin[password]", with: user.password
+    click_button "Sign in"
+    expect(page).to have_content("Signed in successfully.")
+end
