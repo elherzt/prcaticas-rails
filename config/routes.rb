@@ -16,7 +16,7 @@ ExamRails::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      resources :projects
+      resources :users
     end
   end
   #resources :cars do
