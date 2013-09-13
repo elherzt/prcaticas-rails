@@ -14,6 +14,11 @@ ExamRails::Application.routes.draw do
     end
   end
 
+  namespace :api do
+    namespace :v1 do
+      resources :users
+    end
+  end
   #resources :cars do
     #resources :comments
   #end
