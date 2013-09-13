@@ -17,6 +17,11 @@ class Car < ActiveRecord::Base
   #has_attached_file 
   accepts_nested_attributes_for :assets
   before_create :associate_tags
+
+  def last_car
+    car.last
+  end
+
   private 
   def associate_tags
     if tag_names
