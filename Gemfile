@@ -22,6 +22,8 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'cancan'
 
+gem 'devise'
+
 gem 'mini_magick'
 
 gem 'carrierwave'
