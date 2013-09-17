@@ -1,10 +1,10 @@
 ExamRails::Application.routes.draw do
-  devise_for :users
+  devise_for :users  
+  #devise_for :users, :controllers => {
+    #:omniauth_callbacks => "users/omniauth_callbacks"
+  #}
 
-  devise_for :users, :controllers => {
-    :registrations => "registrations",
-    :omniauth_callbacks => "users/omniauth_callbacks"
-  }
+ 
 
   root :to => "users#index"
   resources :users do
@@ -30,8 +30,8 @@ ExamRails::Application.routes.draw do
     #resources :comments
   #end
 
-get "/signin", to: "sessions#new"
-post "/signin", to: "sessions#create"
-get "/signout", to: "sessions#signout"
+#get "/signin", to: "sessions#new"
+#post "/signin", to: "sessions#create"
+#get "/signout", to: "sessions#signout"
 end
 
