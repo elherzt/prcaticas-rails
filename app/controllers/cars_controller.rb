@@ -1,6 +1,6 @@
 class CarsController < ApplicationController
 
-  before_action :require_signin!, except: [:show,:index]
+  before_filter :authenticate_user!, except: [:show,:index]
   before_action :set_user
 
   def new
