@@ -36,6 +36,8 @@ gem 'pg'
 
 gem 'bcrypt-ruby','~> 3.0.0'
 
+gem 'omniauth-twitter', :git => 'https://github.com/arunagw/omniauth-twitter.git'
+
 gem 'searcher', git: 'git://github.com/Stial08/searcher' 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

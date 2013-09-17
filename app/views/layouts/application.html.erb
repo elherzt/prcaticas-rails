@@ -11,6 +11,9 @@
       <ul>
         <% if current_user == nil%> 
           <%= link_to('Login', new_user_session_path) %>
+
+          Or use <%= link_to image_tag("icons/twitter_32.png"), user_omniauth_authorize_path(:twitter), :id => "sign_in_with_twitter" %>
+
         <% else %>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
         <% end %>
