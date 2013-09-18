@@ -18,6 +18,8 @@ class Car < ActiveRecord::Base
   accepts_nested_attributes_for :assets
   before_create :associate_tags
 
+  scope :search_tag, ->(name) { select("name").where("name = ?", name) }
+
   def last_car
     car.last
   end
