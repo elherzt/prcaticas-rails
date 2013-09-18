@@ -6,13 +6,12 @@ class CarsController < ApplicationController
   def new
    @car = @user.cars.build
    3.times { @car.assets.build}
-   #@comment = @car.comments.build
  end
 
  def create
    @car = @user.cars.new(car_params)
-   #binding.pry
    if @car.save
+     Notifier.user_created(current_user).deliver
      flash[:notice] = "car added"
      redirect_to @user
    end
@@ -36,10 +35,7 @@ end
  end
 
  def search
-   #@cars = Car.search("tag:#{params['search']}")
-   #binding.pry
    @cars = @user.cars.search("tag:#{params['search']}")
-   #binding.pry
    render "users/show"
  end
 

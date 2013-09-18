@@ -1,7 +1,6 @@
 class Api::V1::UsersController < Api::V1::BaseController
  
   def index
-    #binding.pry
     respond_with(Car.all.where('user_id = ?',current_user.id))
   end
 
