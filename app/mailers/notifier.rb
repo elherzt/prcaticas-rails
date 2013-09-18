@@ -4,6 +4,6 @@ class Notifier < ActionMailer::Base
   def user_created(user)
     @user = user
     subject = "Welcome #{@user.name} !"
-    mail(:to => @user.mail, :subject => subject)
+    mail(:to => @user.email, :subject => subject)
   end
 end
