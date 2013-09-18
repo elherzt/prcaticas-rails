@@ -36,6 +36,10 @@ gem 'pg'
 
 gem 'bcrypt-ruby','~> 3.0.0'
 
+gem 'twitter'
+
+gem "omniauth"
+
 gem 'omniauth-twitter', :git => 'https://github.com/arunagw/omniauth-twitter.git'
 
 gem 'searcher', git: 'git://github.com/Stial08/searcher' 

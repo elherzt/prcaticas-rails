@@ -2,8 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
    #:token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :omniauthable
+devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :token_authenticatable, :omniauthable
   before_save :ensure_authentication_token
   #
   has_many :cars
@@ -11,8 +10,8 @@ class User < ActiveRecord::Base
   #has_secure_password
 
   def self.find_or_create_for_twitter(response)
-    data = response['extra']['user_hash']
-    if user = User.find_by_twitter_id(data["id"])
+    data = response['extra']['raw_info']
+    if user = User.find_by_twitter_id(data["id"].to_s)
       user
     else # Create a user with a stub password.
       user = User.new(:email => "twitter+#{data["id"]}@example.com",
@@ -20,10 +19,13 @@ class User < ActiveRecord::Base
                       user.twitter_id = data["id"]
                       user.twitter_screen_name = data["screen_name"]
                       user.twitter_display_name = data["display_name"]
-                      user.confirm!
+                      user.password_confirmation = user.password
+                      user.save!
                       user
     end
   end
+
+
 
   def display_name
     if twitter_id
