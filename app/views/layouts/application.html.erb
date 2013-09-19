@@ -17,7 +17,7 @@
 
 
       <% else %>
-        <%#Signed in as <%= current_user%>%>
+        Signed in as <%=link_to current_user.email, user_path(current_user.id) %>
           <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
         <% end %>
       </ul>
