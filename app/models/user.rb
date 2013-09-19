@@ -36,6 +36,7 @@ devise :database_authenticatable, :registerable, :recoverable, :rememberable, :t
       user.github_id = data["id"]
       user.github_user_name = data["login"]
       user.github_display_name = data["name"]
+      user.password_confirmation = user.password
       user.save!
       user
     end
@@ -46,10 +47,13 @@ devise :database_authenticatable, :registerable, :recoverable, :rememberable, :t
   def display_name
     if twitter_id
       "#{twitter_display_name} (@#{twitter_screen_name})"
+    elsif github_id
+      "#{github_display_name} (#{github_user_name})"
     else
       email
     end
   end
+
 
   def to_s
     "#{display_name} (#{admin? ? "Admin" : "User"})"
