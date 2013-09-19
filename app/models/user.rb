@@ -26,7 +26,7 @@ devise :database_authenticatable, :registerable, :recoverable, :rememberable, :t
   end
 
 
-  def find_or_create_for_github(response)
+  def self.find_or_create_for_github(response)
     data = response['extra']['raw_info']
     if user = User.find_by_github_id(data["id"].to_s)
       user
