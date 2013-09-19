@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+caches_action :show
   def index
     @user = User.all
   end
