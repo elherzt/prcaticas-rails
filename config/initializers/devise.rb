@@ -25,4 +25,6 @@ Devise.setup do |config|
     'JtiPHRJ8pmlJ8Oi2NjEI9w',
     'CiElZBTeie2mIrjfnnNSqTFl8mqCdBD8GtlzARQw'
 
+  config.omniauth :github, 'b31c1d5d9bcc8b8ed641', '5af06615c85f4fb9044ac6cd9b450f31e71b57c6'
+
 end
