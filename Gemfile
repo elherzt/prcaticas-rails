@@ -42,6 +42,8 @@ gem "omniauth"
 
 gem 'omniauth-twitter', :git => 'https://github.com/arunagw/omniauth-twitter.git'
 
+ gem 'omniauth-github', :git => 'https://github.com/intridea/omniauth-github.git'
+
 gem 'searcher', git: 'git://github.com/Stial08/searcher' 
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes

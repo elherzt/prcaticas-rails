@@ -26,6 +26,22 @@ devise :database_authenticatable, :registerable, :recoverable, :rememberable, :t
   end
 
 
+  def find_or_create_for_github(response)
+    data = response['extra']['raw_info']
+    if user = User.find_by_github_id(data["id"].to_s)
+      user
+    else # Create a user with a stub password.
+      user = User.new(:email => data["email"],
+                      :password => Devise.friendly_token[0,20])
+      user.github_id = data["id"]
+      user.github_user_name = data["login"]
+      user.github_display_name = data["name"]
+      user.save!
+      user
+    end
+  end
+
+
 
   def display_name
     if twitter_id
