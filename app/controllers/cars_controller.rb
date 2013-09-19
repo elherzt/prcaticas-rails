@@ -36,6 +36,7 @@ end
 
  def search
    @cars = @user.cars.search("tag:#{params['search']}")
+   @cars = @cars.page(params[:page]).per(3)
    render "users/show"
  end
 

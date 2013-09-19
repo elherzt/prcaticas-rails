@@ -25,6 +25,9 @@ ExamRails::Application.routes.draw do
     namespace :v1 do
       resources :users, defaults: {format: :xml}
     end
+    namespace :v2 do
+      resources :users, defaults: {format: :xml}
+    end
   end
 
 end
