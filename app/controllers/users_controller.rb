@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
   def show
     @user = User.find(params[:id])
-    @cars = @user.cars
+    @cars = @user.cars.page(params[:page]).per(3)
   end
 
   def edit

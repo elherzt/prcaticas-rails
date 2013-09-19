@@ -48,6 +48,7 @@ gem 'searcher', git: 'git://github.com/Stial08/searcher'
 
 gem 'kaminari'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
+#
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
