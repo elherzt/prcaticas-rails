@@ -1,6 +1,7 @@
 class CarsController < ApplicationController
 
   before_filter :authenticate_user!, except: [:show,:index]
+  #caches_action :show
   before_action :set_user
 
   def new

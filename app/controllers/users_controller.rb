@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-
+  caches_action :show, :cache_path => (proc do
+    user_path(params[:id] + "/#{current_user.id}/#{params[:page] || 1}")
+  end)
   def index
     @user = User.all
   end
