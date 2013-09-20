@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 
 
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 
@@ -49,6 +50,8 @@ gem 'searcher', git: 'git://github.com/Stial08/searcher'
 gem 'kaminari'
 
 gem 'actionpack-action_caching'
+
+gem 'delayed_job_active_record'
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 #
